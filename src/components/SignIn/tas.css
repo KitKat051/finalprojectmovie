@@ -1,0 +1,11 @@
+div {
+    width: auto;
+    background-color: white;
+    display: flex;
+    min-height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+body {
+    background-color: gray;
+}
