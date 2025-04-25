@@ -154,20 +154,9 @@ const movieSlice = createSlice({
       .addCase(getMovieAndReviews.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
-      })
-         .addCase(postRating.fulfilled, (state, action) => {
-      console.log("Rating submitted successfully:", action.payload.rating);
-
-      // Store it in localStorage
-      const appData = JSON.parse(localStorage.getItem("myAppData")) || {};
-      appData.lastRating = action.payload.rating;
-      localStorage.setItem("myAppData", JSON.stringify(appData));
-    })
-    .addCase(postRating.rejected, (state, action) => {
-      console.error("Failed to submit rating:", action.error);
-    });
-  }
-});
+      });
+    }
+  });
 
 export const { addReview, clearMovie } = movieSlice.actions;
 export default movieSlice.reducer;
